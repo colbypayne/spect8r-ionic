@@ -1,8 +1,8 @@
 {
   "name": "spect8r-ionic",
   "version": "0.0.1",
-  "author": "Ionic Framework",
-  "homepage": "http://ionicframework.com/",
+  "author": "Matt Paul",
+  "homepage": "http://spect8r.com/",
   "private": true,
   "scripts": {
     "start": "ionic-app-scripts serve",
@@ -34,5 +34,5 @@
     "@ionic/app-scripts": "3.2.0",
     "typescript": "~2.6.2"
   },
-  "description": "An Ionic project"
+  "description": "spect8r mobile client"
 }
