@@ -1,0 +1,7 @@
+{
+  "name": "spect8r-ionic",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "ionic-angular"
+}
