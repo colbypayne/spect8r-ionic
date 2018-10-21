@@ -1,8 +1,14 @@
 <ion-header>
   <ion-navbar>
-    <ion-title text-center>Home</ion-title>
+    <ion-title>s p e c t 8 r</ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
+  <h4 text-center>{{"Attended Events"|uppercase}}</h4>
+  <ion-list no-lines>
+    <button background="clear" padding-bottom *ngFor="let event of events"
+      [navPush]="eventDetailsPage"
+      [navParams]="event"><img src="{{event.image}}" alt=""></button>
+  </ion-list>
 </ion-content>

@@ -6,6 +6,7 @@ import { StatusBar } from '@ionic-native/status-bar';
 
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
+import { EventDetailsImagesPage } from '../pages/event-details-images/event-details-images';
 import { AddEventPage } from '../pages/add-event/add-event';
 import { ProfilePage } from '../pages/profile/profile';
 import { SettingsPage } from '../pages/settings/settings';
@@ -15,6 +16,7 @@ import { TabsPage } from '../pages/tabs/tabs';
   declarations: [
     MyApp,
     HomePage,
+    EventDetailsImagesPage,
     AddEventPage,
     ProfilePage,
     SettingsPage,
@@ -28,6 +30,7 @@ import { TabsPage } from '../pages/tabs/tabs';
   entryComponents: [
     MyApp,
     HomePage,
+    EventDetailsImagesPage,
     AddEventPage,
     ProfilePage,
     SettingsPage,

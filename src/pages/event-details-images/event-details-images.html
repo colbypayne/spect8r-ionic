@@ -1,0 +1,71 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>s p e c t 8 r</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        <div text-left>
+          {{event.artist}}
+        </div>
+      </ion-col>
+      <ion-col>
+        <div text-center>
+          {{event.venue}}
+        </div>
+      </ion-col>
+      <ion-col>
+        <div text-right>
+          {{event.date}}
+        </div>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <div padding-bottom>
+    <ion-segment [(ngModel)]="segment" (ionChange)="segmentChanged($event)">
+      <ion-segment-button activated value="images">Images</ion-segment-button>
+      <ion-segment-button value="setlist">Setlist</ion-segment-button>
+      <ion-segment-button value="settings">Settings</ion-segment-button>
+    </ion-segment>
+  </div>
+
+  <ion-list *ngIf="segment == 'images'">
+    <ion-list-header>{{ segment }}</ion-list-header>
+    <ion-item *ngFor="let image of getDetails('images')" no-lines>
+      <img src="{{image}}" alt="">
+    </ion-item>
+  </ion-list>
+
+  <ion-list *ngIf="segment == 'setlist'">
+    <ion-list-header>{{ segment }}</ion-list-header>
+    <ion-item>
+      <div style="white-space: pre-wrap">{{ getDetails('setlist') }}</div>
+    </ion-item>
+  </ion-list>
+
+  <ion-list *ngIf="segment == 'settings'">
+    <ion-list-header>{{ segment }}</ion-list-header>
+    <ion-item no-lines>
+      <button ion-button padding>Artist</button>
+    </ion-item>
+    <ion-item no-lines>
+      <button ion-button padding>Supporting Artist</button>
+    </ion-item>
+    <ion-item no-lines>
+      <button ion-button padding>Venue</button>
+    </ion-item>
+    <ion-item>
+      <button ion-button padding>Date</button>
+    </ion-item>
+    <ion-item no-lines>
+      <button ion-button padding>Save</button>
+      <button ion-button padding color="light">Cancel</button>
+      <button ion-button padding color="danger" float-right>Remove</button>
+    </ion-item>
+  </ion-list>
+  
+</ion-content>
