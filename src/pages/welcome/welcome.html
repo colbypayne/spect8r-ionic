@@ -1,0 +1,11 @@
+<ion-content no-bounce padding>
+  <div style="height: 33%"></div>
+  <div style="height: 33%">
+    <h1 text-center>s p e c t 8 r</h1>
+    <div padding>
+      <button ion-button block (click)="loginWithFacebook()">Login with Facebook</button>
+      <button ion-button block outline [navPush]="loginWithEmail">Login with Email</button>
+      <button ion-button block clear [navPush]="createAccount">create account</button>
+    </div>
+  </div>
+</ion-content>

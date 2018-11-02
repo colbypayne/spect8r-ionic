@@ -3,6 +3,7 @@ import { ErrorHandler, NgModule } from '@angular/core';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { StatusBar } from '@ionic-native/status-bar';
+import { Facebook } from '@ionic-native/facebook';
 
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
@@ -11,6 +12,9 @@ import { AddEventPage } from '../pages/add-event/add-event';
 import { ProfilePage } from '../pages/profile/profile';
 import { SettingsPage } from '../pages/settings/settings';
 import { TabsPage } from '../pages/tabs/tabs';
+import { CreateAccountPage } from '../pages/create-account/create-account';
+import { LoginWithEmailPage } from '../pages/login-with-email/login-with-email';
+import { WelcomePage } from '../pages/welcome/welcome';
 
 @NgModule({
   declarations: [
@@ -20,7 +24,10 @@ import { TabsPage } from '../pages/tabs/tabs';
     AddEventPage,
     ProfilePage,
     SettingsPage,
-    TabsPage
+    TabsPage,
+    CreateAccountPage,
+    LoginWithEmailPage,
+    WelcomePage
   ],
   imports: [
     BrowserModule,
@@ -34,11 +41,15 @@ import { TabsPage } from '../pages/tabs/tabs';
     AddEventPage,
     ProfilePage,
     SettingsPage,
-    TabsPage
+    TabsPage,
+    CreateAccountPage,
+    LoginWithEmailPage,
+    WelcomePage
   ],
   providers: [
     StatusBar,
     SplashScreen,
+    Facebook, 
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })
