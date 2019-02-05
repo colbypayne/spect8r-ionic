@@ -1,6 +1,6 @@
 <ion-header>
   <ion-navbar>
-    <ion-title>s p e c t 8 r</ion-title>
+    <ion-title text-center>s p e c t 8 r</ion-title>
   </ion-navbar>
 </ion-header>
 
@@ -9,17 +9,12 @@
     <ion-row>
       <ion-col>
         <div text-left>
-          {{event.artist}}
-        </div>
-      </ion-col>
-      <ion-col>
-        <div text-center>
-          {{event.venue}}
+          {{event.eventName}}
         </div>
       </ion-col>
       <ion-col>
         <div text-right>
-          {{event.date}}
+          {{event.eventDate}}
         </div>
       </ion-col>
     </ion-row>
@@ -27,39 +22,43 @@
 
   <div padding-bottom>
     <ion-segment [(ngModel)]="segment" (ionChange)="segmentChanged($event)">
-      <ion-segment-button activated value="images">Images</ion-segment-button>
+      <ion-segment-button value="images">Images</ion-segment-button>
       <ion-segment-button value="setlist">Setlist</ion-segment-button>
-      <ion-segment-button value="settings">Settings</ion-segment-button>
+      <ion-segment-button activated value="settings">Settings</ion-segment-button>
     </ion-segment>
   </div>
 
-  <ion-list *ngIf="segment == 'images'">
-    <ion-list-header>{{ segment }}</ion-list-header>
-    <ion-item *ngFor="let image of getDetails('images')" no-lines>
-      <img src="{{image}}" alt="">
-    </ion-item>
+  <ion-list *ngIf="segment == 'images'" no-lines>
+    <ion-card *ngFor="let image of event.myImages">
+      <img src="{{image.imageUrl}}" alt="">
+    </ion-card>
   </ion-list>
 
-  <ion-list *ngIf="segment == 'setlist'">
-    <ion-list-header>{{ segment }}</ion-list-header>
+  <ion-list *ngIf="segment == 'setlist'" no-lines>
     <ion-item>
-      <div style="white-space: pre-wrap">{{ getDetails('setlist') }}</div>
+      <ion-label stacked>Setlist</ion-label>
+      <ion-input value="{{setlistUrl}}"></ion-input>
     </ion-item>
   </ion-list>
 
   <ion-list *ngIf="segment == 'settings'">
-    <ion-list-header>{{ segment }}</ion-list-header>
     <ion-item no-lines>
-      <button ion-button padding>Artist</button>
+      <ion-label stacked>{{headlinerLabel}}</ion-label>
+      <ion-input *ngFor="let artist of event.headliningArtists" 
+                 value="{{artist.artistName}}"></ion-input>
+    </ion-item>
+    <ion-item *ngIf="event.supportingArtists.length > 0" no-lines>
+      <ion-label stacked>{{supportingLabel}}</ion-label>
+      <ion-input *ngFor="let artist of event.supportingArtists" 
+                 value="{{artist.artistName}}"></ion-input>
     </ion-item>
     <ion-item no-lines>
-      <button ion-button padding>Supporting Artist</button>
-    </ion-item>
-    <ion-item no-lines>
-      <button ion-button padding>Venue</button>
+      <ion-label stacked>Venue</ion-label>
+      <ion-input value="{{venueName}}"></ion-input>
     </ion-item>
     <ion-item>
-      <button ion-button padding>Date</button>
+      <ion-label stacked>Date</ion-label>
+      <ion-input value="{{date}}"></ion-input>
     </ion-item>
     <ion-item no-lines>
       <button ion-button padding>Save</button>
