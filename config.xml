@@ -1,6 +1,6 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget id="com.spect8r" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
-    <name>spect8r-ionic</name>
+<widget id="com.spect8r.ionic" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+    <name>spect8r</name>
     <description>spect8r mobile app</description>
     <author email="mattpaul@gmail.com" href="http://ionicframework.com/">Matt Paul</author>
     <content src="index.html" />
@@ -80,13 +80,13 @@
     <plugin name="cordova-plugin-statusbar" spec="2.4.2" />
     <plugin name="cordova-plugin-device" spec="2.0.2" />
     <plugin name="cordova-plugin-splashscreen" spec="5.0.2" />
-    <plugin name="cordova-plugin-ionic-webview" spec="^2.0.0" />
     <plugin name="cordova-plugin-ionic-keyboard" spec="^2.0.5" />
     <plugin name="cordova-plugin-facebook4" spec="^3.1.0">
         <variable name="APP_ID" value="352771081960000" />
         <variable name="APP_NAME" value="spect8r test" />
         <variable name="FACEBOOK_ANDROID_SDK_VERSION" value="4.37.0" />
     </plugin>
+    <plugin name="cordova-plugin-ionic-webview" spec="^4.0.0" />
     <engine name="ios" spec="4.5.5" />
     <engine name="browser" spec="5.0.4" />
 </widget>
