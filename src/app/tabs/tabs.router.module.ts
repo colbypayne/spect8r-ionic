@@ -7,43 +7,51 @@ const routes: Routes = [
     path: 'tabs',
     component: TabsPage,
     children: [
-      {
-        path: 'tab1',
-        children: [
-          {
-            path: '',
-            loadChildren: '../tab1/tab1.module#Tab1PageModule'
-          }
-        ]
-      },
-      {
-        path: 'tab2',
-        children: [
-          {
-            path: '',
-            loadChildren: '../tab2/tab2.module#Tab2PageModule'
-          }
-        ]
-      },
-      {
-        path: 'tab3',
-        children: [
-          {
-            path: '',
-            loadChildren: '../tab3/tab3.module#Tab3PageModule'
-          }
-        ]
-      },
-      {
+    {
+      path: 'events',
+      children: [{
         path: '',
-        redirectTo: '/tabs/tab1',
-        pathMatch: 'full'
-      }
-    ]
+        loadChildren: '../events/events.module#EventsPageModule'
+      },
+      {
+        path: 'edit/:eventId',
+        loadChildren: '../events/edit-event/edit-event.module#EditEventPageModule'
+      },
+      {
+        path: ':eventId',
+        loadChildren: '../events/event-details/event-details.module#EventDetailsPageModule'
+      }]
+    },
+    {
+      path: 'add-event',
+      children: [{
+        path: '',
+        loadChildren: '../events/new-event/new-event.module#NewEventPageModule'
+      }]
+    },
+    {
+      path: 'settings',
+      children: [{
+        path: '',
+        loadChildren: '../settings/settings.module#SettingsPageModule'
+      }]
+    },
+    {
+      path: 'profile',
+      children: [{
+        path: '',
+        loadChildren: '../profile/profile.module#ProfilePageModule'
+      }]
+    },
+    {
+      path: '',
+      redirectTo: '/tabs/events',
+      pathMatch: 'full'
+    }]
   },
   {
     path: '',
-    redirectTo: '/tabs/tab1',
+    redirectTo: '/tabs/events',
     pathMatch: 'full'
   }
 ];
